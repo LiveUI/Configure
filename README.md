@@ -38,7 +38,30 @@ Just add following line package to your `Package.swift` file.
 
 ## Usage
 
-### Basic usage
+### Remote resources
+
+```swift
+let resource = BasicWebResource(
+                    resourceUrl: "http://www.example.com/Resources/email-template.leaf", 
+                    destinationPath: "Resources/email-template.leaf" // Where to install the file to
+               )
+try ResourcesManager.default.add(resource)
+```
+
+### Github resources
+
+```swift
+let resource = BasicGithubResource(
+                    organization: "LiveUI", 
+                    repository: "YourRepo", 
+                    branch: "master", 
+                    path: "Resources/email-template.leaf", 
+                    destinationPath: "Resources/email-template.leaf" // Where to install the file to
+               )
+try ResourcesManager.default.add(resource)
+```
+
+### String resource
 
 ```swift
 import SwiftResources
@@ -57,26 +80,6 @@ let resource = template.asResource(destination: "Resources/email-template.leaf")
 try ResourcesManager.default.add(resource)
 ```
 
-### Remote resources
-
-```swift
-let resource = BasicWebResource(resourceUrl: "http://www.example.com/Resources/email-template.leaf", destinationPath: "Resources/email-template.leaf")
-try ResourcesManager.default.add(resource)
-```
-
-### Github resources
-
-```swift
-let resource = BasicGithubResource(
-                    organization: "LiveUI", 
-                    repository: "YourRepo", 
-                    branch: "master", 
-                    path: "Resources/email-template.leaf", 
-                    destinationPath: "Resources/email-template.leaf"
-               )
-try ResourcesManager.default.add(resource)
-```
-
 ### Run the installer
 
 And when you are ready, run the installer
@@ -85,7 +88,57 @@ And when you are ready, run the installer
 try ResourcesManager.default.run()
 ```
 
-You can obviously run multiple types and whatever amount of files you need
+### Further convenience methods
+
+There is a plenty convenience methods to help you create your templates like the one previously mentioned `asResource` on a string. There is one for a URL, an array or URL's and strings.
+
+### Custom resource installers
+
+You can also create your own completely custom installers very easily by using one of the premade protocols, imagine something like this:
+
+```swift
+public struct ModelResource<T>: Resource where T: Codable {
+
+    /// Your model which conforms to Codable
+    public let model: T
+
+    /// Where the final file will be saved
+    public let destinationPath: String
+
+    /// Make the resource to be rewritten every time it runs
+    public var alwaysOverride: Bool {
+        return true
+    }
+
+    /// Converting to data
+    public func data() throws -> Data {
+        let data = try JSONEncoder().encode(model)
+        return data
+    }
+
+    /// Intializer
+    public init(model: T, destinationPath: String) {
+        self.model = model
+        self.destinationPath = destinationPath
+    }
+
+}
+```
+
+## Use with Vapor 3
+
+This package has no dependencies on purpose so a little trick to get into your `Resources` folder on Vapor 3 just give the Resource a `destination` that could be made somehow like this:
+
+```swift
+extension Request {
+    /// Gives absolute path URL for the Resources folder
+    var resourcesUrl: URL {
+        let config = DirectoryConfig.detect()
+        var url: URL = URL(fileURLWithPath: config.workDir).appendingPathComponent("Resources")
+        return url
+    }
+}
+```
 
 ## Support
 
