@@ -25,7 +25,7 @@ class ResourcesManager {
     public internal(set) var resources: [Resource] = []
     
     /// Add resource to the manager
-    public func add(resource: Resource) throws {
+    public func add(_ resource: Resource) throws {
         guard resource.validate() else {
             throw Error.resourceValidationFailed
         }

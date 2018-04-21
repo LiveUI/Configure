@@ -38,13 +38,54 @@ Just add following line package to your `Package.swift` file.
 
 ## Usage
 
-Basic usage
+### Basic usage
 
 ```swift
 import SwiftResources
 
-//
+// Create a string resource
+let template = """
+Hi #(user.firstname) #(user.lastname)
+
+This is an email template for you
+
+Bye,
+
+LiveUI team!
+"""
+let resource = template.asResource(destination: "Resources/email-template.leaf")
+try ResourcesManager.default.add(resource)
 ```
+
+### Remote resources
+
+```swift
+let resource = BasicWebResource(resourceUrl: "http://www.example.com/Resources/email-template.leaf", destinationPath: "Resources/email-template.leaf")
+try ResourcesManager.default.add(resource)
+```
+
+### Github resources
+
+```swift
+let resource = BasicGithubResource(
+                    organization: "LiveUI", 
+                    repository: "YourRepo", 
+                    branch: "master", 
+                    path: "Resources/email-template.leaf", 
+                    destinationPath: "Resources/email-template.leaf"
+               )
+try ResourcesManager.default.add(resource)
+```
+
+### Run the installer
+
+And when you are ready, run the installer
+
+```swift
+try ResourcesManager.default.run()
+```
+
+You can obviously run multiple types and whatever amount of files you need
 
 ## Support
 

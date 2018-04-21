@@ -27,7 +27,7 @@ public struct BasicGithubResource: GithubResource {
     
     
     /// Intializer
-    public init(organization: String, repository: String, branch: String, path: String, destinationPath: String) {
+    public init(organization: String, repository: String, branch: String = "master", path: String, destinationPath: String) {
         self.organization = organization
         self.repository = repository
         self.branch = branch
