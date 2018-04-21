@@ -49,8 +49,8 @@ class ResourcesManager {
     
     // MARK: Private interface
     
-    private func resource(exists: Resource) -> Bool {
-        return false
+    private func resource(exists resource: Resource) -> Bool {
+        return FileManager.default.fileExists(atPath: resource.destinationPath)
     }
     
 }
