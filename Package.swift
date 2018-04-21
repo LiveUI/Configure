@@ -2,16 +2,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "Resources",
+    name: "SwiftResources",
     products: [
-        .library(name: "Resources", targets: ["Resources"])
+        .library(name: "SwiftResources", targets: ["SwiftResources"])
     ],
-    dependencies: [
-        
-    ],
+    dependencies: [],
     targets: [
         .target(
-            name: "Resources",
+            name: "SwiftResources",
             dependencies: []
         )
     ]

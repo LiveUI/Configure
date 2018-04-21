@@ -19,8 +19,8 @@
          productRefGroup = "OBJ_27";
          projectDirPath = ".";
          targets = (
-            "Resources::Resources",
-            "Resources::SwiftPMPackageDescription",
+            "SwiftResources::SwiftResources",
+            "SwiftResources::SwiftPMPackageDescription",
          );
       };
       "OBJ_10" = {
@@ -141,7 +141,7 @@
       "OBJ_27" = {
          isa = "PBXGroup";
          children = (
-            "Resources::Resources::Product",
+            "SwiftResources::SwiftResources::Product",
          );
          name = "Products";
          path = "";
@@ -199,7 +199,7 @@
             HEADER_SEARCH_PATHS = (
                "$(inherited)",
             );
-            INFOPLIST_FILE = "Resources.xcodeproj/Resources_Info.plist";
+            INFOPLIST_FILE = "SwiftResources.xcodeproj/SwiftResources_Info.plist";
             LD_RUNPATH_SEARCH_PATHS = (
                "$(inherited)",
                "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
@@ -213,12 +213,12 @@
             OTHER_SWIFT_FLAGS = (
                "$(inherited)",
             );
-            PRODUCT_BUNDLE_IDENTIFIER = "Resources";
+            PRODUCT_BUNDLE_IDENTIFIER = "SwiftResources";
             PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
             PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
             SKIP_INSTALL = "YES";
             SWIFT_VERSION = "4.0";
-            TARGET_NAME = "Resources";
+            TARGET_NAME = "SwiftResources";
          };
          name = "Debug";
       };
@@ -233,7 +233,7 @@
             HEADER_SEARCH_PATHS = (
                "$(inherited)",
             );
-            INFOPLIST_FILE = "Resources.xcodeproj/Resources_Info.plist";
+            INFOPLIST_FILE = "SwiftResources.xcodeproj/SwiftResources_Info.plist";
             LD_RUNPATH_SEARCH_PATHS = (
                "$(inherited)",
                "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
@@ -247,12 +247,12 @@
             OTHER_SWIFT_FLAGS = (
                "$(inherited)",
             );
-            PRODUCT_BUNDLE_IDENTIFIER = "Resources";
+            PRODUCT_BUNDLE_IDENTIFIER = "SwiftResources";
             PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
             PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
             SKIP_INSTALL = "YES";
             SWIFT_VERSION = "4.0";
-            TARGET_NAME = "Resources";
+            TARGET_NAME = "SwiftResources";
          };
          name = "Release";
       };
@@ -446,8 +446,8 @@
             "OBJ_17",
             "OBJ_20",
          );
-         name = "Resources";
-         path = "Sources/Resources";
+         name = "SwiftResources";
+         path = "Sources/SwiftResources";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_9" = {
@@ -461,7 +461,19 @@
          path = "BasicResources";
          sourceTree = "<group>";
       };
-      "Resources::Resources" = {
+      "SwiftResources::SwiftPMPackageDescription" = {
+         isa = "PBXNativeTarget";
+         buildConfigurationList = "OBJ_48";
+         buildPhases = (
+            "OBJ_51",
+         );
+         dependencies = (
+         );
+         name = "SwiftResourcesPackageDescription";
+         productName = "SwiftResourcesPackageDescription";
+         productType = "com.apple.product-type.framework";
+      };
+      "SwiftResources::SwiftResources" = {
          isa = "PBXNativeTarget";
          buildConfigurationList = "OBJ_30";
          buildPhases = (
@@ -470,27 +482,15 @@
          );
          dependencies = (
          );
-         name = "Resources";
-         productName = "Resources";
-         productReference = "Resources::Resources::Product";
+         name = "SwiftResources";
+         productName = "SwiftResources";
+         productReference = "SwiftResources::SwiftResources::Product";
          productType = "com.apple.product-type.framework";
       };
-      "Resources::Resources::Product" = {
+      "SwiftResources::SwiftResources::Product" = {
          isa = "PBXFileReference";
-         path = "Resources.framework";
+         path = "SwiftResources.framework";
          sourceTree = "BUILT_PRODUCTS_DIR";
-      };
-      "Resources::SwiftPMPackageDescription" = {
-         isa = "PBXNativeTarget";
-         buildConfigurationList = "OBJ_48";
-         buildPhases = (
-            "OBJ_51",
-         );
-         dependencies = (
-         );
-         name = "ResourcesPackageDescription";
-         productName = "ResourcesPackageDescription";
-         productType = "com.apple.product-type.framework";
       };
    };
    rootObject = "OBJ_1";

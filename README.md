@@ -1,10 +1,10 @@
-![Resources](https://github.com/LiveUI/Resources/raw/master/Other/logo.png)
+![SwiftResources](https://github.com/LiveUI/SwiftResources/raw/master/Other/logo.png)
 
 ##
 
 [![Slack](https://img.shields.io/badge/join-slack-745EAF.svg?style=flat)](http://bit.ly/2B0dEyt)
-[![Jenkins](https://ci.liveui.io/job/LiveUI/job/Resources/job/master/badge/icon)](https://ci.liveui.io/job/LiveUI/job/Resources/)
-[![Platforms](https://img.shields.io/badge/platforms-macOS%2010.13%20|%20Ubuntu%2016.04%20LTS-ff0000.svg?style=flat)](https://github.com/LiveUI/Resources)
+[![Jenkins](https://ci.liveui.io/job/LiveUI/job/SwiftResources/job/master/badge/icon)](https://ci.liveui.io/job/LiveUI/job/SwiftResources/)
+[![Platforms](https://img.shields.io/badge/platforms-macOS%2010.13%20|%20Ubuntu%2016.04%20LTS-ff0000.svg?style=flat)](https://github.com/LiveUI/SwiftResources)
 [![Swift Package Manager](https://img.shields.io/badge/SPM-compatible-4BC51D.svg?style=flat)](https://swift.org/package-manager/)
 [![Swift 4](https://img.shields.io/badge/swift-4.1-orange.svg?style=flat)](http://swift.org)
 [![Vapor 3](https://img.shields.io/badge/vapor-3.0-blue.svg?style=flat)](https://vapor.codes)
@@ -14,7 +14,7 @@
 
 Have you ever had an issue with SPM not supporting resources? How do you get your templates, demo files and I don't know what else from your submodules into your app?
 
-Well, I hope **Resources** will make your experience with rousource files a tiny bit easier.
+Well, I hope **SwiftResources** will make your experience with resource files a tiny bit easier.
 
 #### Functionality
 
@@ -33,7 +33,7 @@ Well, I hope **Resources** will make your experience with rousource files a tiny
 Just add following line package to your `Package.swift` file.
 
 ```swift
-.package(url: "https://github.com/LiveUI/Resources.git", .branch("master"))
+.package(url: "https://github.com/LiveUI/SwiftResources.git", .branch("master"))
 ```
 
 ## Usage
@@ -41,7 +41,7 @@ Just add following line package to your `Package.swift` file.
 Basic usage
 
 ```swift
-import Resources
+import SwiftResources
 
 //
 ```
@@ -74,7 +74,7 @@ Ondrej Rafaj (@rafiki270 on [Github](https://github.com/rafiki270), [Twitter](ht
 
 ## License
 
-Resources is distributed under an Apache 2 license and can be shared or used freely within the bounds of the license itself.
+SwiftResources is distributed under an Apache 2 license and can be shared or used freely within the bounds of the license itself.
 Most third party components used (like Vapor framework and all it’s components) in this software are MIT licensed.
 List of all used software is listed in the repository. All components should be available in the dependencies folder.
 

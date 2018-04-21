@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "Resources::Resources"
-               BuildableName = "Resources.framework"
-               BlueprintName = "Resources"
-               ReferencedContainer = "container:Resources.xcodeproj">
+               BlueprintIdentifier = "SwiftResources::SwiftResources"
+               BuildableName = "SwiftResources.framework"
+               BlueprintName = "SwiftResources"
+               ReferencedContainer = "container:SwiftResources.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,10 +45,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "Resources::Resources"
-            BuildableName = "Resources.framework"
-            BlueprintName = "Resources"
-            ReferencedContainer = "container:Resources.xcodeproj">
+            BlueprintIdentifier = "SwiftResources::SwiftResources"
+            BuildableName = "SwiftResources.framework"
+            BlueprintName = "SwiftResources"
+            ReferencedContainer = "container:SwiftResources.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
