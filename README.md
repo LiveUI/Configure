@@ -16,6 +16,8 @@ Have you ever had an issue with SPM not supporting resources? How do you get you
 
 Well, I hope **Configure** will make your experience with resource files a tiny bit easier.
 
+> No dependencies so will work with Vapor, Perfect, Kitura and others ...
+
 #### Functionality
 
 - [x] Install resources from a string
